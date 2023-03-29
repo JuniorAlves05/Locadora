@@ -4,12 +4,28 @@ public class Filme {
 
     String nome;
     String descricao;
-    int idademin;
+    int idademin,cod,a,b,c,d;
 
-    public Filme(String nome, String descricao,  int idade) {
+    double valordia;
+
+    public Filme(int cod, String nome, String descricao,  int idade, double valordia) {
+        this.cod = cod;
         this.nome = nome;
         this.descricao = descricao;
-        this.idademin = idade;
+        this.idademin  = idade;
+        this.valordia  = valordia;
+
+    }
+    public void pedido (){
+
+    }
+
+    public int getCod() {
+        return cod;
+    }
+
+    public void setCod(int cod) {
+        this.cod= cod ;
     }
 
 
@@ -29,8 +45,6 @@ public class Filme {
         this.descricao = descricao;
     }
 
-
-
     public int getIdade() {
         return idademin;
     }
@@ -39,11 +53,23 @@ public class Filme {
         this.idademin = idade;
     }
 
+    public double getValordia() {
+        return valordia;
+    }
+
+    public void setValordia(double valordia) {
+        this.valordia = valordia;
+    }
+
     @Override
     public String toString() {
-        return "            Catalogo : " +
+        return "              " +
+                " \n Cod = " + cod  +
                 " \n Nome= " + nome +
                 " \n Descricao  = " + descricao  +
-                " \n Idademin   = " + idademin ;
+                " \n Idademin   = " + idademin +
+                " \n Valor Dia  = " + valordia;
+
+
     }
 }
