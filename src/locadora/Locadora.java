@@ -10,6 +10,7 @@ public class Locadora {
         Scanner sc = new Scanner(System.in);
         String name;
         int idade;
+        double escolha;
 
 
         Filme f1 = new Filme(001,"Tarzan"," O rei da floresta ",10,10.00);
@@ -39,8 +40,27 @@ public class Locadora {
         }
         System.out.println();
         System.out.println(" Informe os filmes desejados :");
+        escolha=sc.nextInt();
 
+        if ( escolha == 1 ){
+            System.out.println(f1);
+            escolha = 10.0;
 
+        }else if ( escolha == 2){
+            System.out.println(f2);
+            escolha = 10.0;
+        }else if ( escolha == 3){
+            System.out.println(f3);
+            escolha = 15.0;
+        }else if ( escolha == 4 ){
+            System.out.println(f4);
+            escolha = 15.0;
+        }
+        System.out.println();
+        System.out.println("           Usuario : " + name);
+        System.out.println();
+        System.out.println(" Filme escolhido " + escolha );
     }
+
 
 }

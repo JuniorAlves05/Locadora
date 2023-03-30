@@ -4,7 +4,9 @@ public class Filme {
 
     String nome;
     String descricao;
-    int idademin,cod,a,b,c,d;
+    int idademin,cod;
+
+
 
     double valordia;
 
