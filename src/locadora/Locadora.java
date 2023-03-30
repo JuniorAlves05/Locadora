@@ -1,5 +1,4 @@
 package locadora;
-
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -10,7 +9,11 @@ public class Locadora {
         Scanner sc = new Scanner(System.in);
         String name;
         int idade;
-        double escolha;
+        int escolha;
+        double total = 0;
+        boolean continuar = true;
+        String filme = " Filme nao selecionado ";
+
 
 
         Filme f1 = new Filme(001,"Tarzan"," O rei da floresta ",10,10.00);
@@ -39,28 +42,46 @@ public class Locadora {
             System.out.println(f4);
         }
         System.out.println();
-        System.out.println(" Informe os filmes desejados :");
-        escolha=sc.nextInt();
 
-        if ( escolha == 1 ){
-            System.out.println(f1);
-            escolha = 10.0;
-
-        }else if ( escolha == 2){
-            System.out.println(f2);
-            escolha = 10.0;
-        }else if ( escolha == 3){
-            System.out.println(f3);
-            escolha = 15.0;
-        }else if ( escolha == 4 ){
-            System.out.println(f4);
-            escolha = 15.0;
+        while (continuar) {
+            System.out.println();
+            System.out.println(" Escolha um filme para alugar (digite 0 para finalizar):");
+            escolha = sc.nextInt();
+            if (escolha == 0) {
+                continuar = false;
+            } else if (escolha == 1) {
+                total += 10.0;
+            } else if (escolha == 2) {
+                total += 5.0;
+            } else if (escolha == 3) {
+                if (idade >= 18) {
+                    total += 15.0;
+                } else {
+                    System.out.println("Voce nao tem idade suficiente para alugar este filme.");
+                }
+            } else if (escolha == 4) {
+                if (idade >= 18) {
+                    total += 15.0;
+                } else {
+                    System.out.println("Voce nao tem idade suficiente para alugar este filme.");
+                }
+            } else {
+                System.out.println("Escolha inválida.");
+            }
         }
+
         System.out.println();
         System.out.println("           Usuario : " + name);
         System.out.println();
-        System.out.println(" Filme escolhido " + escolha );
+        System.out.printf(" Total dos filmes alugados R$: %.2f ", total );
+        System.out.println();
+        System.out.println();
+        System.out.println("           Volte Sempre !!! ");
+
     }
 
-
 }
+
+
+
+
